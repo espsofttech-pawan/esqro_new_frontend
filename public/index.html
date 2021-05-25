@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>EsqroCrypto</title>
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/esqro_frontent/css/style.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/esqro_frontent/css/style_new.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/esqro_frontent/css/color.css">
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/esqro_frontent/css/responsive.css">
+
+    <link rel="stylesheet" type="text/css" href="http://localhost:3000/esqro_frontent/css/parsley.css">
+    <link href="http://localhost:3000/esqro_frontent/css/gsi-step-indicator.min.css" rel="stylesheet">
+    <link href="http://localhost:3000/esqro_frontent/css/tsf-step-form-wizard.min.css" rel="stylesheet">
+    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+   
+  
+   
+   <style>
+      .black-header{
+          background: #000;
+          box-shadow: 0 0 15px rgb(240 233 233 / 79%);
+          padding: 3px 0px;
+          }
+          .black-header.fixed {
+          padding: 3px 0px;
+        }
+        
+          input[type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 1;
+            filter: invert(0.8);
+          }
+    </style>
+        
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+
+  </body>
+
+  <script type="text/javascript">
+    $('#payment_method').on('change', function(){
+       var payment_method = $(this).val();
+       if(payment_method != "Cash Hand To Hand")
+       {
+          $('#denomination_div').hide();
+          $('#ad_denomination').find($('option')).attr('selected',false);
+       }
+       else{
+          $('#denomination_div').show();
+       }
+    }).trigger('change')
+ </script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+  <script type="text/javascript">
+    $(function(){
+        var dtToday = new Date();
+        var month = dtToday.getMonth() + 1;
+        var day = dtToday.getDate();
+        var year = dtToday.getFullYear();
+        if(month < 10)
+            month = '0' + month.toString();
+        if(day < 10)
+            day = '0' + day.toString();
+        var maxDate = year + '-' + month + '-' + day;
+        $('#expirationDate').attr('min', maxDate);
+    });	
+    </script>
+
+<script>
+  $(document).ready(function(){
+    $(".gsi-step-indicator li").hover(function(){
+      $("span").css("color:white;");
+    });
+  });
+   $(function () {
+       pageLoadScript();
+   });
+   
+   
+   function pageLoadScript() {
+   
+       _stepEffect = $('#stepEffect').val();
+       _style = 'style2';
+       _stepTransition = $('#stepTransition').is(':checked');
+       // _showButtons = $('#showButtons').is(':checked');
+       _showStepNum = $('#showStepNum').is(':checked');
+   
+   
+   
+       
+       $('.tsf-wizard-3').tsfWizard({
+           stepEffect: _stepEffect,
+           stepStyle: _style,
+           navPosition: 'left',
+           stepTransition: _stepTransition,
+           // showButtons: _showButtons,
+           showStepNum: _showStepNum,
+           height: '300px'
+       });
+      
+   }       
+</script>    
+
+<script type="text/javascript">
+	$(document).ready(function() {
+	    $('#myOffers').DataTable();
+      $('#alltrades').DataTable();
+      $('#support').DataTable();
+	} );	
+</script>
+
+<script>
+$(".top-scroll").on("click", function() {
+  window.scrollTo({top: 0, left: 0, behavior: 'smooth' });
+});  
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.24/js/dataTables.bootstrap4.min.js"></script>
+
+
+  <script src="http://localhost:3000/esqro_frontent/js/owl.carousel.min.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/bootstrap.min.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/demo.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/tsf-wizard-plugin.js"></script>
+  <script type="text/javascript" src="http://localhost:3000/esqro_frontent/js/parsley.min.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/script.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/snap.svg-min.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/jquery.listtopie.min.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/animation.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/custom.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/particles.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/app.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/particles2.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/app2.js"></script>
+  <script src="http://localhost:3000/esqro_frontent/js/stats.js"></script>
+</html>
